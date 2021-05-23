@@ -1,0 +1,95 @@
+body {
+    color: #000;
+    overflow-x: hidden;
+    height: 100%;
+    background-color: #fff;
+    background-repeat: no-repeat
+}
+
+
+
+  
+  
+  /* Styles for the table on the cart page */
+  
+  #cart {
+    border-collapse: collapse;
+    margin: auto;
+    width: 65%;
+  }
+  
+  #cart thead tr th {
+    color: #777;
+    border-bottom: 3px solid #062f4f;
+    font-weight: bold;
+    padding: .5em 1em;
+  }
+  
+  
+  #cart tr td {
+    border-bottom: 1px solid #062f4f;
+    border-collapse: none;
+    color: #777;
+    padding: .5em 1em;
+    text-align: center;
+    width: auto;
+  }
+  
+  #cart tr td:last-child,
+  #cart tr th:last-child {
+    text-align: left;
+    width: 100%;
+  }
+  
+  #cart tr td:first-child {
+    color: red;
+    cursor: pointer;
+  }
+.card {
+    margin: 40px 0px;
+    padding: 40px 50px;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 1px 5px 10px 1px rgba(0, 0, 0, 0.2)
+}
+
+input,
+textarea {
+    background-color: #F3E5F5;
+    padding: 8px 15px 8px 15px;
+    width: 100%;
+    border-radius: 5px !important;
+    box-sizing: border-box;
+    border: 1px solid #F3E5F5;
+    font-size: 15px !important;
+    color: #000 !important;
+    font-weight: 300
+}
+
+input:focus,
+textarea:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid #9FA8DA;
+    outline-width: 0;
+    font-weight: 400
+}
+
+button:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    outline-width: 0
+}
+
+.pay {
+    width: 80px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #673AB7;
+    margin: 10px 20px 10px 0px;
+    cursor: pointer;
+    box-shadow: 1px 5px 10px 1px rgba(0, 0, 0, 0.2)
+}
+
