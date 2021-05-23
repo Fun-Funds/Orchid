@@ -1,0 +1,85 @@
+'use strict';
+
+const table = document.getElementById('cart');
+table.addEventListener('click', removeItemFromCart);
+let cart;
+
+function loadCart() {
+  const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+  cart = new Cart(cartItems);
+}
+
+
+function renderCart() {
+  loadCart();
+  clearCart();
+  showCart();
+}
+
+// Remove all of the rows (tr) in the cart table (tbody)
+function clearCart() {
+let tBody= table.getElementsByTagName('tbody')[0];
+while (tBody.firstElementChild){
+  tBody.removeChild(tBody.firstElementChild);
+}
+}
+
+
+function showCart() {
+
+let tBody = table.getElementsByTagName('tbody')[0];
+
+   for (let i=0; i<cart.items.length;i++){
+    //  Create a TR
+  let tableRow = document.createElement('tr');
+// Create a TD for the  item  
+  let itemtd= document.createElement('td');
+  itemtd.textContent=cart.items[i].product;
+
+  //  Create a TD for the quantity 
+
+  let quantitytd= document.createElement('td');
+  quantitytd.textContent=cart.items[i].quantity;
+
+  // Create a TD for the price
+  let pricetd= document.createElement('td');
+  pricetd.textContent=cart.items[i].price;
+
+ //Create a TD for the  delete link 
+
+  let deletetd= document.createElement('td');
+  deletetd.setAttribute('id',cart.items[i].product);
+  let button=document.createElement('p');
+  deletetd.appendChild(button);
+  button.textContent='X';
+  button.setAttribute('id',cart.items[i].product);
+button.addEventListener('click',removeItemFromCart);
+
+ 
+  
+  // Add the TR to the TBODY and each of the TD's to the TR
+  tBody.appendChild(tableRow);
+  tableRow.appendChild(deletetd);
+  tableRow.appendChild(quantitytd);
+  tableRow.appendChild(itemtd);
+tableRow.appendChild(pricetd);
+  }
+}
+
+function removeItemFromCart(event) {
+
+  //  When a delete link is clicked, use cart.removeItem to remove the correct item
+let removeItem= event.target.id;
+for (let i=0; i<cart.items.length;i++){
+  if (cart.items[i].product===removeItem){
+  cart.removeItem (cart.items[i]);
+}}
+  //  Save the cart back to local storage
+  cart.saveToLocalStorage();
+  // Re-draw the cart table
+  renderCart();
+
+} 
+
+// This will initialize the page and draw the cart on screen
+renderCart();
