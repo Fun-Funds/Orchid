@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/cart.css">
+</head>
+</head>
+<body>
+    <header></header>
+    <main>
+        
+        <section class="deck col-1">
+            <div id="cart-container" class="card">
+              <table id="cart">
+                <thead>
+                  <tr>
+                    <th>Shopping Items</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Remove</th>
+
+                  </tr>
+                </thead>
+                <tbody></tbody>
+                <tfoot>
+
+                </tfoot>
+              </table>
+            </div>
+          </section>
+      
+    
+       
+      
+        <section class="Payform">
+            <div class="card">
+                <div>
+                    <div class="col-lg-3 radio-group">
+                        <div class="row d-flex px-3 radio"> <img class="pay" src="img/credit card.jpg">
+                            <p class="auto">Credit Card</p>
+                        </div>
+                        <div class="row d-flex px-3 radio "> <img class="pay" src="img/visa.jpg">
+                            <p class="auto">Debit Card</p>
+                        </div>
+                        <div class="row d-flex px-3 radio mb-3"> <img class="pay" src="img/paypal.png">
+                            <p class="auto">PayPal</p>
+                        </div>
+                    </div>
+                </div>
+            <form action="" id="payform">
+                <fieldset>
+                   <label class="form-control-label">Name on Card</label> <input type="text" id="cname" name="cname" placeholder="Johnny Doe"/>
+                   <label class="form-control-label">Card Number</label> <input type="text" id="cnum" name="cnum" placeholder="1111 2222 3333 4444"/>
+                   <label class="form-control-label">Expiration Date</label> <input type="text" id="exp" name="exp" placeholder="MM/YYYY"/>
+                   <label class="form-control-label">CVV</label> <input type="text" id="cvv" name="cvv" placeholder="***"/>                     
+                          
+                   <input type="submit" value="pay" />
+                
+                </fieldset>
+                
+                    </form>
+                    </section>              
+
+</main>
+    <footer></footer>
+    <script src="js/cart.js"></script>
+</body>
+</html>
