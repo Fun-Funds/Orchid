@@ -18,7 +18,7 @@
 
 <body>
 
-    <header>
+    <header id="headpage">
         <section>
             <article>
                 <div class="crossfade">
@@ -42,7 +42,8 @@
                             <li><a href="index.html">Home</a></li>
                             <li><a href="products.html">Products</a></li>
                             <li><a href="aboutUs.html">About</a></li>
-                            <li><a href="cart.html">Cart &nbsp;</a><i class="fas fa-shopping-cart"></i></li>
+                            <li><a href="cart.html">Cart &nbsp;</a><i class="fas fa-shopping-cart">&nbsp;<span id="itemCount"></span></i></li>
+                            
                         </ul>
                     </div>
                 </nav>
@@ -50,22 +51,27 @@
         </section>
     </header>
     <main>
-        <img id="back"
+        <section id="img-container">
+            <img id="back"
             src="https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fwww.orchidee.nl%2FUploadBestanden%2Ftn%2FTerLaak_2020_NicoAlsemgeest_0091-1600-550.JPG"
-            alt="background" style="height:400px;width:1510px">
-
-        <div id="box">
-
-
-
-
-        </div>
-<button type="submit">buy</button>
-
+            alt="background">
+        </section>
+        <section>
+            <div id="box">
+            </div>
+        </section>
     </main>
-    <script src="js/products.js"></script>
-    <!-- <script src="js/cart.js"></script> -->
+    <footer>
+        <i class="fab fa-facebook-f"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-whatsapp"></i>
 
+        Copyright ©2021 All rights reserved
+        <a href="#headpage"><i class="fas fa-angle-double-up"> Scroll Up</i></a>
+    </footer>
+    <script src="js/app.js"></script>
+    <script src="js/products.js"></script>
 </body>
 
 </html>

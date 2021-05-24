@@ -1,31 +1,11 @@
-'use strict '
-let proudects = [];
+'use strict';
 
+const cart = new Cart([]);
 
-function ProudectsImages(proudectsName, price) {
-    this.proudectsName = proudectsName.split(".")[0];
-    this.source = 'img/' + proudectsName;
-    this.price = price;
-    proudects.push(this)
-
-}
-
-let proudectsImg = ['Golden parade.jpg', 'Red tulip.jpg', 'white tulips.jpg', 'Glamour flowers.jpg',
-    'simple beauty.jpg', 'Graceful pink.jpg', 'Softly speaking.jpg', 'Sun flower.jpg',
-    'Yellow sunshine.jpg', 'Warm Spirit.jpg', 'Rose And Lily Classic.jpg', 'rainbow.jpg'];
-let prices = ['30$', '60$', '90$', '99$', '150$', '170$', '200$', '250$', '30$', '60$', '90$', '99$'];
-for (let index = 0; index < proudectsImg.length; index++) {
-    new ProudectsImages(proudectsImg[index], prices[index]);
-
-}
-
-function renderImg() {
+function populateForm() {
 
     let divEl = document.getElementById("box");
-
-    for (let i = 0; i < proudectsImg.length; i++) {
-        // divEl.setAttribute("class", "image");
-        
+    for (let i in Product.allProducts) {
         let divE2 = document.createElement('div');
         divEl.appendChild(divE2);
         divE2.setAttribute("id", "card-container");
@@ -43,34 +23,73 @@ function renderImg() {
         divE5.setAttribute("class", "back face");
 
         let imgEl = document.createElement("img");
-        imgEl.setAttribute("class","pic")
-        let pEl = document.createElement("h1");
-        let para = document.createElement('p');
-        divE5.appendChild(para);
-        // imgEl.setAttribute("class", "imgsize");
         divE4.appendChild(imgEl);
-        divE5.appendChild(pEl);
-        // divE4.appendChild(ulEl);
-        divE5.appendChild(para);
+        imgEl.setAttribute("class", "pic")
 
-        let button =document.createElement('button');
-        button.innerHTML="BUY";
-        button.type="buy";
-        button.name="cartButton";
+        let headerEl = document.createElement("h1");
+        divE5.appendChild(headerEl);
+
+        let paraEl = document.createElement('p');
+        divE5.appendChild(paraEl);
+
+        imgEl.src = `${Product.allProducts[i].filePath}`;
+
+        headerEl.textContent = `${Product.allProducts[i].name}`;
+
+        paraEl.textContent = `${Product.allProducts[i].price}`;
+
+        let button = document.createElement('button');
+        button.setAttribute("class", "addToCart");
+        button.setAttribute("onclick",`saveEl('${headerEl.textContent}','${paraEl.textContent}')`);
+        button.innerHTML = "BUY";
+        button.type = "buy";
+        button.name = "cartButton";
         divE5.appendChild(button);
-
-
-        imgEl.src = `${proudects[i].source}`;
-
-        pEl.textContent = `${proudects[i].proudectsName}`;
-
-        para.textContent = `${proudects[i].price}`;
+        button.addEventListener('click', handleSubmit);
 
 
     }
 }
 
+populateForm()
+
+let x;
+let y;
+
+function saveEl(a,b){
+ x = a;
+ y = b;
+return(x,y);
+}
 
 
 
-renderImg();
+
+
+function handleSubmit(event) {
+    event.preventDefault();
+    addSelectedItemToCart();
+    cart.saveToLocalStorage();
+    updateCounter();
+}
+
+
+function addSelectedItemToCart() {
+    
+     let selectedItemName = x;
+     let selectedItemPrice = y;
+    cart.addItem(selectedItemName,selectedItemPrice);
+    console.log(cart);
+}
+
+
+function updateCounter() {
+    
+    let countEl = document.getElementById('itemCount');
+    countEl.textContent = `${cart.items.length}`;
+    console.log(countEl);
+
+    let data = JSON.stringify(`${cart.items.length}`);
+    localStorage.setItem('count', data);
+}
+
