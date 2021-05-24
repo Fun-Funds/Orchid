@@ -53,6 +53,13 @@ function renderImg() {
         // divE4.appendChild(ulEl);
         divE5.appendChild(para);
 
+        let button =document.createElement('button');
+        button.innerHTML="BUY";
+        button.type="buy";
+        button.name="cartButton";
+        divE5.appendChild(button);
+
+
         imgEl.src = `${proudects[i].source}`;
 
         pEl.textContent = `${proudects[i].proudectsName}`;
