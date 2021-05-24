@@ -1,19 +1,140 @@
-/* img{
-    height: 500px;
-     width: 350px;
-      margin-right:7px;
-      margin-top: 50 px;
-    margin-bottom: 50px;
-    padding-top: 50px;
-    padding-right: 150px;
-    padding-bottom: 50px;
-    padding-left:150px;
-} */
+* {
+  box-sizing: border-box;
+}
+#img-container{
+  padding: 35px 35px;
+  width: 100%;
+  height: 100%
+}
+#img-container img{
+  width: 100%;
+  height: 100%
+}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+}
 
-      /* img {
-        display: block;
-        width: 150px;
-        float: left;
-        height: 150px;
-        border: 2px solid lightblue;
-      } */
+body {
+  font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
+  background: #009688
+}
+
+.fas {
+  font-size: xx-large;
+}
+
+
+.pic{
+  display: inline;
+}
+
+
+
+@import url("https://fonts.googleapis.com/css?family=Questrial");
+html {
+  min-height: 100%;
+}
+
+body {
+  background: linear-gradient(217deg, rgba(242, 157, 171, 0.9), rgba(242, 157, 171, 0) 50%), linear-gradient(107deg, rgba(221, 137, 158, 0.9), rgba(221, 137, 158, 0) 70%), linear-gradient(336deg, rgba(242, 305, 193, 0.9), rgba(242, 305, 193, 0) 60%);
+}
+
+.box {
+  width: 800px;
+  margin: 10% auto;
+  position: relative;
+}
+
+#card-container {
+  border-radius: 50px;
+  position: relative;
+  margin: 50px;
+  padding-left: 100px;
+  width: 300px;
+  height: 300px;
+  z-index: 1;
+  float: left;
+  perspective: 1000px;
+}
+
+img {
+  border-radius: 50px;
+  width: 300px;
+  height: 300px;
+}
+
+#card, #card2, #card3 {
+  width: 100%;
+  height: 100%;
+  margin:0%;
+  transform-style: preserve-3d;
+  transition: all 0.8s linear;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+#card:hover {
+  border-radius: 50px;
+
+  transform: rotateY(180deg);
+  box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+#card2:hover {
+  transform: rotateY(-180deg);
+  box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+#card3:hover {
+  transform: rotateX(180deg);
+  box-shadow: 5px -5px 15px rgba(0, 0, 0, 0.3);
+}
+
+#card3 .back {
+  transform: rotateX(-180deg);
+}
+
+.face {
+  border-radius: 50px;
+
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* backface-visibility: hidden; */
+}
+
+.back {
+  border-radius: 50px;
+
+  display: block;
+  transform: rotateY(180deg);
+  box-sizing: border-box;
+  padding: 10px;
+  text-align: center;
+  opacity: 0.7;
+  background: #F9F3E4;
+}
+
+h1, p {
+  font-family: "Questrial", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+h1 {
+  font-size: 1.8em;
+  padding-top: 15px;
+  color: #DD899E;
+}
+
+p {
+  padding-top: 50px;
+  font-size: 45px;
+}
+
+.date {
+  color: #D0B2AF;
+}
+
