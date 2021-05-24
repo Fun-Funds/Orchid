@@ -1,136 +1,128 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400&display=swap');
-*{
- margin:0;
- padding:0;
+* {
+  box-sizing: border-box;
 }
-body{
- font-family:'Roboto',sans-serif;
-  overflow-x:hidden;
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
   background: #009688
 }
-nav{
-display:flex;
-background: linear-gradient(135deg, #ffec61, #f321d7); 
-justify-content: space-around;
-padding:20px 0;
-color:rgb(255, 254, 254);
-align-items: center;
-}
-nav ul{
-display:flex;
-list-style: none;
-width:40%;
-justify-content: space-between;
-}
-nav ul li{
-  border: 2px solid rgb(253, 247, 247);
-  padding: 5px;
-  border-radius: 18.2px;
-}
-nav ul li:hover {
-  color: #ffec61;
-border-color:   #ffec61;
-}
-nav ul li a {
-  color:#fff;
-  text-decoration: none;
-  font-size: 1em;
+
+.fas {
+  font-size: xx-large;
 }
 
-
-.btn{
-border-radius: 40px;
+header {
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
 }
-/*Hamburger */
-.menu-bars{
-display:none;
-flex-direction: column;
-height:20px;
-justify-content: space-between;
-position:relative;
-  z-index:999;
+.pic{
+  display: inline;
 }
-.menu-bars input{
-position: absolute;
-width:40px;
-height:28px;
-left:-5px;
-top:-3px;
-opacity: 0;
-cursor:pointer;
-z-index: 2;
+.content {
+  width: 94%;
+  margin: 4em auto;
+  font-size: 30px;
+  line-height: 30px;
+  text-align: justify;
 }
 
-.menu-bars span{
-display:block;
-width:28px;
-height:3px;
-background-color:rgb(255, 254, 254);
-border-radius: 3px;
-transition: all 0.3s;
+.logo {
+  line-height: 60px;
+  position: fixed;
+  float: left;
+  margin: 16px 46px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 50px;
+  letter-spacing: 2px;
 }
-
-.menu-bars span:nth-child(2){
-transform-origin: 0 0 ;
+.fas{
+    font-size: xx-large;
 }
-
-.menu-bars span:nth-child(4){
-  transform-origin: 0 100% ;
-  }
-
-.menu-bars input:checked ~ span:nth-child(2){
-background-color: white;
-transform: rotate(45deg) translate(-1px, -1px);
-}
-.menu-bars input:checked ~ span:nth-child(4){
-  background-color: white;
-  transform: rotate(-45deg) translate(-1px,0); 
-  }
-
-  .menu-bars input:checked ~ span:nth-child(3){
-    opacity: 0;
-    transform: scale(0); 
-    }
-
-
-@media only screen and (max-width: 768px){
-nav ul{
-width:50%;
-}
-
-}
-@media only screen and (max-width: 576px){
-  nav ul li{
-    color: #ffec61;
-  border:none;
-  }
-  .menu-bars{
-  display:flex;
-  }
-  nav ul{
-  position:absolute;
-  right:0;
+nav {
+  /* border: solid red; */
+  position: fixed;
   top:0;
-  width:100%;
-  height:100vh;
-  justify-content: space-evenly;
-  flex-direction: column;
-  align-items: center;
-  background: linear-gradient(135deg,  #f321d7,#ffec61, rgb(243, 9, 9));
-  z-index: 1;
-  transform: translateY(-100%);
-  transition: all 1s;
+  width: 100%;
+  line-height: 60px;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+    rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+    rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+
+nav ul {
+  line-height: 60px;
+  list-style: none;
+  background: rgba(238, 136, 229, 0.87);
+  overflow: hidden;
+  color: #fff;
+  padding: 0;
+  text-align: right;
+  margin: 0;
+  padding-right: 40px;
+  transition: 1s;
+}
+
+nav.black ul {
+  background: #000;
+}
+
+nav ul li {
+  display: inline-block;
+  padding: 16px 40px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 32px;
+}
+
+nav{
+  z-index: +1;
+}
+
+
+@media (max-width: 786px) {
+  .logo {
+    position: fixed;
+    top: 0;
+    margin-top: 16px;
   }
+
+  nav ul {
+    max-height: 0px;
+    background: #000;
   }
-  nav ul.slide{
-    transform: translateY(0);
+
+  nav.black ul {
+    background: #000;
   }
 
+  .showing {
+    max-height: 34em;
+  }
 
+  nav ul li {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 24px;
+    text-align: center;
+  }
 
-
-
-
+  .menu-icon {
+    display: block;
+  }
+}
 
 @import url("https://fonts.googleapis.com/css?family=Questrial");
 html {
@@ -138,7 +130,7 @@ html {
 }
 
 body {
-  background: linear-gradient(217deg, rgba(242, 157, 171, 0.9), rgba(242, 157, 171, 0) 50%), linear-gradient(107deg, rgba(221, 137, 158, 0.9), rgba(221, 137, 158, 0) 70%), linear-gradient(336deg, rgba(242, 205, 193, 0.9), rgba(242, 205, 193, 0) 60%);
+  background: linear-gradient(217deg, rgba(242, 157, 171, 0.9), rgba(242, 157, 171, 0) 50%), linear-gradient(107deg, rgba(221, 137, 158, 0.9), rgba(221, 137, 158, 0) 70%), linear-gradient(336deg, rgba(242, 305, 193, 0.9), rgba(242, 305, 193, 0) 60%);
 }
 
 .box {
@@ -148,18 +140,21 @@ body {
 }
 
 #card-container {
+  border-radius: 50px;
   position: relative;
-  margin: 30px;
-  width: 200px;
-  height: 200px;
+  margin: 50px;
+  padding-left: 100px;
+  width: 300px;
+  height: 300px;
   z-index: 1;
   float: left;
   perspective: 1000px;
 }
 
 img {
-  width: 200px;
-  height: 200px;
+  border-radius: 50px;
+  width: 300px;
+  height: 300px;
 }
 
 #card, #card2, #card3 {
@@ -172,6 +167,8 @@ img {
 }
 
 #card:hover {
+  border-radius: 50px;
+
   transform: rotateY(180deg);
   box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.3);
 }
@@ -185,11 +182,14 @@ img {
   transform: rotateX(180deg);
   box-shadow: 5px -5px 15px rgba(0, 0, 0, 0.3);
 }
+
 #card3 .back {
   transform: rotateX(-180deg);
 }
 
 .face {
+  border-radius: 50px;
+
   position: absolute;
   width: 100%;
   height: 100%;
@@ -197,6 +197,8 @@ img {
 }
 
 .back {
+  border-radius: 50px;
+
   display: block;
   transform: rotateY(180deg);
   box-sizing: border-box;
@@ -213,13 +215,14 @@ h1, p {
 }
 
 h1 {
-  font-size: 1.2em;
+  font-size: 1.8em;
   padding-top: 15px;
   color: #DD899E;
 }
 
 p {
-  font-size: 30px;
+  padding-top: 50px;
+  font-size: 45px;
 }
 
 .date {
@@ -235,10 +238,12 @@ footer {
   padding: 10px;
   color: #EA7996;
 }
+
 footer a {
   color: #ffffff;
   text-decoration: none;
 }
+
 footer a:hover {
   color: #7d7d7d;
 }

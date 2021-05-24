@@ -40,10 +40,10 @@ function renderImg() {
 
         let divE5 = document.createElement('div');
         divE3.appendChild(divE5);
-        divE5.setAttribute("class", "back face")
-
+        divE5.setAttribute("class", "back face");
 
         let imgEl = document.createElement("img");
+        imgEl.setAttribute("class","pic")
         let pEl = document.createElement("h1");
         let para = document.createElement('p');
         divE5.appendChild(para);
