@@ -1,8 +1,5 @@
 'use strict';
 
-<<<<<<< HEAD
-
-=======
 let navbar = document.querySelector('nav');
 
 window.onscroll = function() {
@@ -14,7 +11,6 @@ window.onscroll = function() {
     navbar.classList.remove('scrolled');
   }
 }
->>>>>>> main
 const cart = new Cart([]);
 
 let lImgEl = document.getElementById('leftImg');

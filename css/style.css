@@ -45,7 +45,7 @@ header {
   position: absolute;
   float: left;
   margin: 16px 46px;
-  color: #fff;
+  color:black;
   font-weight: bold;
   font-size: 50px;
   letter-spacing: 2px;
@@ -74,7 +74,7 @@ nav {
 }
 
 nav.scrolled {
-  background: #0a0a0a;
+  background: white;
   
 }
 
