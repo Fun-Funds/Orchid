@@ -80,3 +80,18 @@ function loadCount(){
   }
   
   loadCount()
+
+  function showPopUp1(){
+    var popup_box = document.getElementById('my_pop_up_box1');
+    popup_box.style.display="block";
+    setTimeout(function() { popup_box.style.display="none";}, 3000);
+  }
+  
+  
+  function showPopUp2(){
+    var popup_box = document.getElementById('my_pop_up_box2');
+    popup_box.style.display="block";
+    setTimeout(function() { popup_box.style.display="none";}, 3000);
+  }
+  
+ 

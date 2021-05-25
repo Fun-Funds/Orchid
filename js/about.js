@@ -7,3 +7,4 @@ function loadCount(){
     countEl.textContent = `${countItems}`;
   }
   loadCount()
+
