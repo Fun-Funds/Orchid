@@ -1,5 +1,6 @@
 'use strict';
 
+
 const cart = new Cart([]);
 
 function populateForm() {
@@ -64,8 +65,6 @@ return(x,y);
 
 
 
-
-
 function handleSubmit(event) {
     event.preventDefault();
     addSelectedItemToCart();
@@ -83,13 +82,10 @@ function addSelectedItemToCart() {
 }
 
 
-function updateCounter() {
-    
+function loadCount(){
+    const countItems = JSON.parse(localStorage.getItem('count')) || [];
     let countEl = document.getElementById('itemCount');
-    countEl.textContent = `${cart.items.length}`;
-    console.log(countEl);
+    countEl.textContent = `${countItems}`;
+  }
 
-    let data = JSON.stringify(`${cart.items.length}`);
-    localStorage.setItem('count', data);
-}
-
+  loadCount()

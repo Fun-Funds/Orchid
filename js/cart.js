@@ -28,7 +28,7 @@ function renderCart() {
 function clearCart() {
 let tBody= table.getElementsByTagName('tbody')[0];
 while (tBody.firstElementChild){
-  tBody.removeChild(tBody.firstElementChild);
+tBody.removeChild(tBody.firstElementChild);
 }
 }
 
@@ -36,11 +36,11 @@ function showCart() {
 
 let tBody = table.getElementsByTagName('tbody')[0];
 
-   for (let i=0; i< cart.items.length ;i++){
-    //  Create a TR
+  for (let i=0; i< cart.items.length ;i++){
+  //  Create a TR
   let tableRow = document.createElement('tr');
   tBody.appendChild(tableRow);
-// Create a TD for the  item  
+  // Create a TD for the  item  
   let itemtd= document.createElement('td');
   tableRow.appendChild(itemtd);
   itemtd.textContent=cart.items[i].product;
@@ -71,7 +71,7 @@ let tBody = table.getElementsByTagName('tbody')[0];
 
 function removeItemFromCart(event) {
 
-  //  When a delete link is clicked, use cart.removeItem to remove the correct item
+//  When a delete link is clicked, use cart.removeItem to remove the correct item
 let removeItem= event.target.id;
 for (let i=0; i<cart.items.length;i++){
   if (cart.items[i].product===removeItem){
@@ -83,8 +83,7 @@ for (let i=0; i<cart.items.length;i++){
   cart.saveToLocalStorage();
   // Re-draw the cart table
   renderCart();
-
-} 
+ }
 
 // This will initialize the page and draw the cart on screen
 renderCart();
