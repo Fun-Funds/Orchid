@@ -87,3 +87,4 @@ for (let i=0; i<cart.items.length;i++){
 
 // This will initialize the page and draw the cart on screen
 renderCart();
+
