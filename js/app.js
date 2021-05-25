@@ -58,3 +58,13 @@ function generateCatalog() {
 
 
 generateCatalog();
+
+function updateCounter() {
+    
+    let countEl = document.getElementById('itemCount');
+    countEl.textContent = `${cart.items.length}`;
+    console.log(countEl);
+
+    let data = JSON.stringify(`${cart.items.length}`);
+    localStorage.setItem('count', data);
+}
