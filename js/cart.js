@@ -1,5 +1,5 @@
 'use strict';
-let navbar = document.querySelector('nav');
+//let navbar = document.querySelector('nav');
 
 window.onscroll = function() {
 
@@ -12,6 +12,13 @@ window.onscroll = function() {
 }
 const table = document.getElementById('cart');
 table.addEventListener('click', removeItemFromCart);
+
+ document.getElementById("quantity").addEventListener("change", function( event ) {
+  let newQuantity=event.target.value;
+  console.log (newQuantity);
+}, false);
+
+
 
 let cart;
 
@@ -56,10 +63,12 @@ let tBody = table.getElementsByTagName('tbody')[0];
   itemtd.textContent=cart.items[i].product;
 
   //  Create a TD for the quantity 
-
-  let quantitytd= document.createElement('td');
+  /*let quantitytd= document.createElement('td');
   tableRow.appendChild(quantitytd);
-  quantitytd.textContent="";
+  let buttonInput=document.createElement('input',Number);
+  quantitytd.appendChild(buttonInput);
+  quantitytd.textContent= buttonInput;*/
+  // need to move quantity button and repeat it
 
   // Create a TD for the price
   let pricetd= document.createElement('td');
@@ -94,7 +103,9 @@ for (let i=0; i<cart.items.length;i++){
   // Re-draw the cart table
   renderCart();
  }
+function quantityEdit(event){
 
+}
 // This will initialize the page and draw the cart on screen
 renderCart();
 
