@@ -1,6 +1,6 @@
 'use strict';
 
-let navbar = document.querySelector('nav');
+//let navbar = document.querySelector('nav');
 
 window.onscroll = function() {
 
