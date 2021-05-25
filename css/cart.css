@@ -96,17 +96,7 @@ body {
   height: 40px;
   margin-left:-5px;
 }
-/* .fa {
-    background-color: #F3E5F5;
-    padding: 8px 15px 8px 15px;
-    width: 60%;
-    border-radius: 5px !important;
-    box-sizing: border-box;
-    border: 1px solid #F3E5F5;
-    font-size: 15px !important;
-    color: #000 !important;
-    font-weight: 300
-} */ 
+
 
 input:focus,
 textarea:focus {
