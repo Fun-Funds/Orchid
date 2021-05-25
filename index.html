@@ -41,7 +41,7 @@
                             <li><a href="index.html">Home</a></li>
                             <li><a href="products.html">Products</a></li>
                             <li><a href="aboutUs.html">About</a></li>
-                            <li><a href="cart.html">Cart &nbsp;</a><i class="fas fa-shopping-cart"></i></li>
+                            <li><a href="cart.html">Cart &nbsp;</a><i class="fas fa-shopping-cart">&nbsp;<span id="itemCount"></span></i></li>
                         </ul>
                     </div>
                 </nav>
@@ -50,24 +50,25 @@
     </header>
     <main>
         <section id="sect3">
+            <div class="parent_div">
             <div class="circle"><h2>
                 <br>
                 ABOUT US
             </h2></div>
+            <br><br>
+            <p>We provide all kinds of fresh flower services.</p><br>
+            <p>We take flowers personally& we bring you happiness.</p><br>
+            <p>When you think of flowers think of ours.</p><br>
+            <p>To share a flowers is to share the happiness.</p><br>
+            <p>The perfect bunch for every occasion.</p><br>
+            <p>The Orchid business has a significant market in the social event world, as flowers.</p>
             <div id="videoDiv">
                 <video width="700" height="400" loop autoplay>
                     <source src="https://assets.mixkit.co/videos/preview/mixkit-view-to-the-sideboard-of-a-flower-shop-4742-large.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                   </video>
                 </div>
-            <br><br>
-            <p>We provide all kinds of fresh flower services.</p><br>
-            <p>The Orchid business has a significant market in the corporate and social event world, as flowers.</p><br>
-            <p>We take flowers personally& we bring you happiness.</p><br>
-            <p>When you think of flowers think of ours.</p><br>
-            <p>To share a flowers is to share the happiness.</p><br>
-            <p>The perfect bunch for every occasion.</p>
-         
+            </div>
         </section>
         <section id="sect1">
             <video id="right" width="500" height="400" loop autoplay>
@@ -121,35 +122,35 @@
             </div>
             <div class="wrapper1">
                 <div class="product-img">
-                  <img src="img/rainbow.jpg" height="420" width="327">
+                  <img id="leftImg" height="420" width="327">
                 </div>
                 <div class="product-info">
                   <div class="product-text">
-                    <h1>Rainbow</h1>
+                    <h1 id="imgName1"></h1>
                     <br>
                     <p>CUSTOM FLOWER
-                        <br>Let our flowers make your party more perfect.<br>
-                        Price : 99$ </p>
+                        <br>Let our flowers make your party more perfect.<br></p>
+                        <p id="price1"><p>
                   </div>
                   <div class="product-price-btn">
-                    <button type="button">Order now</button>
+                    <button id="orderNum1" type="button">Order now</button>
                   </div>
                 </div>
               </div>
               <div class="wrapper2">
                 <div class="product-img">
-                  <img src="img/Softly speaking.jpg" height="420" width="327">
+                  <img id="rightImg" height="420" width="327">
                 </div>
                 <div class="product-info">
                   <div class="product-text">
-                    <h1>Lily</h1>
+                    <h1 id="imgName2"></h1>
                     <br>
                     <p>CUSTOM FLOWER
-                        <br>Let our flowers make your party more perfect.<br>
-                        Price : 200$ </p>
+                        <br>Let our flowers make your party more perfect.<br></p>
+                       <p id="price2"></p> 
                   </div>
                   <div class="product-price-btn">
-                    <button type="button">Order now</button>
+                    <button id="orderNum2" type="button">Order now</button>
                   </div>
                 </div>
               </div>
@@ -165,6 +166,7 @@
         <a href="#headpage"><i class="fas fa-angle-double-up"> Scroll Up</i></a>
     </footer>
     <script src="js/app.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
