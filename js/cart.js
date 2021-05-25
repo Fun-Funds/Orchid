@@ -68,7 +68,7 @@ let tBody = table.getElementsByTagName('tbody')[0];
   let buttonInput=document.createElement('input',Number);
   quantitytd.appendChild(buttonInput);
   quantitytd.textContent= buttonInput;*/
-  
+  // need to move quantity button and repeat it
 
   // Create a TD for the price
   let pricetd= document.createElement('td');
