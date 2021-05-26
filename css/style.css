@@ -461,10 +461,10 @@ header{
   background-color: #e96188;
 }
 
-footer {
+/* footer {
   clear: both;
   text-align: center;
-  color: #000;
+  color:aliceblue;
   font-size: medium;
   padding: 80px;
 }
@@ -476,13 +476,13 @@ footer a {
   font-weight: 600;
   background: linear-gradient(45deg, #7520ff, #e96188);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-footer .fab {
-  padding: 0 15px;
+  -webkit-text-fill-color: transparent; */
+/* } */
+/* footer .fab { */
+  /* padding: 0 15px;
   float: left;
   font-size: xx-large;
-}
+} */
 footer .fab:hover {
   background: linear-gradient(45deg, #7520ff, #e96188);
   -webkit-background-clip: text;
