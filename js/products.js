@@ -47,8 +47,8 @@ function populateForm() {
 
         headerEl.textContent = `${Product.allProducts[i].name}`;
 
-        paraEl.textContent = `${Product.allProducts[i].price}`;
-
+        paraEl.textContent = `${Product.allProducts[i].price}$`;
+let priceE1 = Product.allProducts[i].price;
         let textE1 = document.createElement("h2");
         divE2.appendChild(textE1);
         textE1.textContent = `${Product.allProducts[i].name}`;
@@ -147,7 +147,7 @@ function populateForm() {
 
         button.setAttribute("class", "addToCart");
         // button.setAttribute("class", "button-bird");
-        button.setAttribute("onclick", `saveEl('${headerEl.textContent}','${paraEl.textContent}')`);
+        button.setAttribute("onclick", `saveEl('${headerEl.textContent}','${priceE1}')`);
         // button.innerHTML = "BUY";
         // button.type = "buy";
         // button.name = "cartButton";
