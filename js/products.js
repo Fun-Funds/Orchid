@@ -1,11 +1,11 @@
 'use strict';
 
-let navbar = document.querySelector('nav');
+
 
 window.onscroll = function() {
 
   // pageYOffset or scrollY
-  if (window.pageYOffset > 500) {
+  if (window.pageYOffset > 0) {
     navbar.classList.add('scrolled');
   } else {
     navbar.classList.remove('scrolled');
@@ -59,6 +59,7 @@ function populateForm() {
         button.addEventListener('click', handleSubmit);
 
 
+
     }
 }
 
@@ -84,13 +85,23 @@ function handleSubmit(event) {
 
 
 function addSelectedItemToCart() {
+  let selectedItemName = x;
+  let selectedItemPrice = y;
+for (let index = 0; index < cart.items.length; index++) {
+  if(cart.items[index].product === selectedItemName) {
+    cart.items[index].quantity ++;
+    cart.saveToLocalStorage();
+    return;
     
-     let selectedItemName = x;
-     let selectedItemPrice = y;
+  }
+  
+}
+    
     cart.addItem(selectedItemName,selectedItemPrice);
     console.log(cart);
-}
+    
 
+}
 
 function loadCount(){
     const countItems = JSON.parse(localStorage.getItem('count')) || [];
@@ -98,4 +109,4 @@ function loadCount(){
     countEl.textContent = `${countItems}`;
   }
 
-  loadCount()
+  loadCount();
