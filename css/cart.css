@@ -164,8 +164,10 @@ h3{
   display: flex;
   -ms-flex-wrap: wrap; /* IE10 */
   flex-wrap: wrap;
-  margin: 0 -16px;
+  /* margin: 0 -16px; */
   width: 600px;
+  margin: auto;
+/* width: 60%; */
   
 
 }
@@ -186,12 +188,12 @@ h3{
   -ms-flex: 75%; /* IE10 */
   flex: 75%;
   width:600px;
-  margin-left:500px;
+  /* margin-left:500px; */
 }
 .col-25,
 .col-50,
 .col-75 {
-  padding: 0 16px;
+  /* padding: 0 16px; */
 }
 
 .container {
@@ -220,25 +222,6 @@ label {
   font-size: 24px;
 }
 
-.btn {
-  background-color:rgb(88, 85, 85);
-  color: white;
-  padding: 12px;
-  margin: 10px 0;
-  border: none;
-  width: 300px;
-  border-radius: 3px;
-  cursor: pointer;
-  font-size: 17px;
-  margin-left:110px;
-  
-
-}
-
-.btn:hover {
-  background-color: black;
-  
-}
 
 span.price {
   float: right;
@@ -312,6 +295,7 @@ span.price {
 
 /* title styles */
 .home-title span{
+  text-align: center;
   position: relative;
   overflow: hidden;
   display: block;
@@ -386,7 +370,7 @@ span.price {
   margin: auto;
   padding: 0;
   border: 1px solid #888;
-  width: 40%;
+  width: 36%;
   box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
   -webkit-animation-name: animatetop;
   -webkit-animation-duration: 0.4s;
@@ -422,7 +406,7 @@ span.price {
 
 .modal-header {
   padding: 2px 16px;
-  background-color: rgba(9, 48, 16, 0.919);
+  background-color:#7520ff;
   color: white;
 }
 
@@ -436,19 +420,20 @@ span.price {
 .modal-body {
     padding: 2px 16px;
     height: 270px;
+    
     text-align: center;
     font-size: 20px;
     padding-top: 21px;
     font-family: cursive;
-    background-image:url(https://mafexpress.com/wp-content/uploads/2020/07/251ed9_5ccef94203bf4137b6b702801bfb7b18_mv2.gif);
+    background-image:url(https://media.giphy.com/media/dAzkOoCgoFHtCAdFhe/giphy.gif);
     background-repeat: no-repeat;
     background-position-x: center;
 }
 
 .modal-footer {
   padding: 2px 16px;
-  background-color: rgba(9, 48, 16, 0.919);
-  color: white;
+  background-color: rgba(216, 240, 220, 0.919);
+  color: black;
   font-size: 15px;
   text-align: center;
   font-family: cursive;
@@ -516,9 +501,88 @@ span.price {
   to {opacity:1 ;}
 }
 
+
+/* ////// button  */
+
+.one, .btn, .three, .four, .five {
+  border: none;
+  border-radius: 4px;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.48);
+  overflow: hidden;
+  padding: 20px 50px 20px 70px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  position: relative;
+  color: white;
+  outline: none;
+  cursor: pointer;
+  width: 100%;
+  -webkit-transition: background-position .7s,box-shadow .4s;
+  transition: background-position .7s,box-shadow .4s;
+  background-size: 110%;
+  font-family: 'Oswald', sans-serif;
+}
+.one:hover, .btn:hover, .three:hover, .four:hover, .five:hover {
+  background-position: 0% 30%;
+}
+.one:hover:after, .btn:hover:after, .three:hover:after, .four:hover:after, .five:hover:after {
+  right: -40px;
+  -webkit-transition: right .4s,-webkit-transform 30s .2s linear;
+  transition: right .4s,-webkit-transform 30s .2s linear;
+  transition: right .4s,transform 30s .2s linear;
+  transition: right .4s,transform 30s .2s linear,-webkit-transform 30s .2s linear;
+}
+.one:before, .btn:before, .three:before, .four:before, .five:before, .one:after, .btn:after, .three:after, .four:after, .five:after {
+  font-family: FontAwesome;
+  display: block;
+  position: absolute;
+}
+.one:before, .btn:before, .three:before, .four:before, .five:before {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  font-size: 30px;
+  left: 25px;
+  top: 19px;
+}
+.one:after, .btn:after, .three:after, .four:after, .five:after {
+  -webkit-transition: right .4s, -webkit-transform .2s;
+  transition: right .4s, -webkit-transform .2s;
+  transition: right .4s, transform .2s;
+  transition: right .4s, transform .2s, -webkit-transform .2s;
+  font-size: 100px;
+  opacity: .3;
+  right: -120px;
+  top: -17px;
+}
+
+
+.btn {
+  font-size: 30px;
+  box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.16) inset, 0px 0px 10px 0px #E48A3C;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#E48A3C), to(rgba(222, 135, 61, 0.24))), url("http://www.eatweartravel.com/wp-content/uploads/2015/04/i-love-shopping_1920x1200_83206.jpg");
+  background-image: linear-gradient(to bottom, #E48A3C, rgba(222, 135, 61, 0.24)), url("http://www.eatweartravel.com/wp-content/uploads/2015/04/i-love-shopping_1920x1200_83206.jpg");
+}
+.btn:hover {
+  box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.16) inset, 0px 0px 30px 0px #E48A3C;
+}
+.btn:hover:after {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+.btn:hover:before {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+.btn:after, .btn:before {
+  content: "";
+}
+.btn b {
+  color: #FFD9B4;
+  font-weight: 700;
+}
   
 #clearCartButton {
-  margin-left: 700px;
+  margin-left: 620px;
   width:150px;
   height: 50px;
     -moz-box-shadow:inset 0px 1px 0px 0px #fbafe3;
