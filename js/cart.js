@@ -4,7 +4,7 @@ let navbar = document.querySelector('nav');
 window.onscroll = function() {
 
   // pageYOffset or scrollY
-  if (window.pageYOffset > 500) {
+  if (window.pageYOffset > 0) {
     navbar.classList.add('scrolled');
   } else {
     navbar.classList.remove('scrolled');
@@ -13,7 +13,8 @@ window.onscroll = function() {
 const table = document.getElementById('cart');
 table.addEventListener('click', removeItemFromCart);
 
-
+let total;
+let totalsum=0;
 
 let cart;
 
@@ -48,6 +49,8 @@ function showCart() {
 
 let tBody = table.getElementsByTagName('tbody')[0];
 
+
+ 
   for (let i=0; i< cart.items.length ;i++){
   //  Create a TR
   let tableRow = document.createElement('tr');
@@ -56,6 +59,7 @@ let tBody = table.getElementsByTagName('tbody')[0];
   let itemtd= document.createElement('td');
   tableRow.appendChild(itemtd);
   itemtd.textContent=cart.items[i].product;
+
 
   let btnEl1 = document.createElement("button");
   tableRow.appendChild(btnEl1);
@@ -67,6 +71,8 @@ let tBody = table.getElementsByTagName('tbody')[0];
   quantitytd.setAttribute("type", "number");
   tableRow.appendChild(quantitytd);
   quantitytd.value=cart.items[i].quantity;
+  console.log(typeof (cart.items[i].quantity));
+  
 
   let btnEl2 = document.createElement("button");
   tableRow.appendChild(btnEl2);
@@ -77,7 +83,8 @@ let tBody = table.getElementsByTagName('tbody')[0];
   // Create a TD for the price
   let pricetd= document.createElement('td');
   tableRow.appendChild(pricetd);
-  pricetd.textContent=cart.items[i].price;
+  pricetd.textContent=`${cart.items[i].price}$`;
+ // priceArr.push[cart.items[i].price];
 
  //Create a TD for the  delete link 
 
@@ -89,13 +96,23 @@ let tBody = table.getElementsByTagName('tbody')[0];
   button.textContent='X';
   button.setAttribute('id',cart.items[i].product);
   button.addEventListener('click',removeItemFromCart);
-  // if (data !== undefined) {
-
-  //   countEl.textContent = cart.items[i].quantity;
-
-  // }
-
-  }
+   }
+   let tableRowtotal = document.createElement('tr');
+   tBody.appendChild(tableRowtotal);
+   // Create a TD for the  item  
+   let totaltd= document.createElement('td');
+   tableRowtotal.appendChild(totaltd);
+   totaltd.textContent= 'Total';
+   let totaltd2= document.createElement('td');
+   tableRowtotal.appendChild(totaltd2);
+   totaltd2.textContent= '   ';
+   let totaltd3= document.createElement('td');
+   tableRowtotal.appendChild(totaltd3);
+   totaltd3.textContent=  updteTotal(totalsum)+'$';
+   let totaltd4= document.createElement('td');
+   tableRowtotal.appendChild(totaltd4);
+   totaltd4.textContent='    ';
+   
 }
 let x;
 function saveEl(a){
@@ -110,11 +127,12 @@ function inc(){
     if(cart.items[index].product === selectedItemName) {
       cart.items[index].quantity ++;
       cart.saveToLocalStorage();
-      updateCounter()
+      updateCounter();
       return;
       
     }
 }
+//updteTotal();
 }
 function dec(){
   let selectedItemName = x;
@@ -122,12 +140,13 @@ function dec(){
     if(cart.items[index].product === selectedItemName) {
       cart.items[index].quantity --;
       cart.saveToLocalStorage();
-      updateCounter()
+      updateCounter();
       return;
       
       
     }
 }
+//updteTotal();
 }
 
 function removeItemFromCart(event) {
@@ -149,9 +168,21 @@ for (let i=0; i<cart.items.length;i++){
   renderCart();
  }
 
-// This will initialize the page and draw the cart on screen
-renderCart();
 
+function updteTotal(totalsum) {
+
+   if (totalsum !== null) {
+
+    for (let i = 0; i < cart.items.length ; i++) {
+      totalsum = totalsum + (cart.items[i].quantity * cart.items[i].price);
+  }
+  return totalsum;
+
+ }
+  
+  }
+ 
+renderCart();
 
 
 // Get the modal
@@ -180,4 +211,14 @@ window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
+}
+let clearCartEl= document.getElementById('clearCart');
+let btnEl3 = document.createElement("button");
+btnEl3.setAttribute("id","clearCartButton");
+btnEl3.textContent="Clear Cart";
+clearCartEl.appendChild(btnEl3);
+btnEl3.onclick = function() {
+  modal.style.display = "none";
+  location.reload();
+  localStorage.clear();
 }

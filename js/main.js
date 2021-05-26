@@ -45,12 +45,12 @@ function renderImg() {
     lImgEl.setAttribute('src', Product.allProducts[leftImgIndex].filePath);
     lImgEl.setAttribute('title', Product.allProducts[leftImgIndex].name);
     lImgElname.textContent = Product.allProducts[leftImgIndex].name;
-    lImgElpr.textContent = ` Price : ${Product.allProducts[leftImgIndex].price}`;
+    lImgElpr.textContent = ` Price : ${Product.allProducts[leftImgIndex].price}$`;
 
     rImgEl.setAttribute('src', Product.allProducts[rightImgIndex].filePath);
     rImgEl.setAttribute('title', Product.allProducts[rightImgIndex].name);
     rImgElname.textContent = Product.allProducts[rightImgIndex].name;
-    rImgElpr.textContent = ` Price : ${Product.allProducts[rightImgIndex].price}`;
+    rImgElpr.textContent = ` Price : ${Product.allProducts[rightImgIndex].price}$`;
 
     lastImages[0] = leftImgIndex;
     lastImages[1] = rightImgIndex;
