@@ -1,11 +1,10 @@
 'use strict';
 
-let navbar = document.querySelector('nav');
 
 window.onscroll = function() {
 
   // pageYOffset or scrollY
-  if (window.pageYOffset > 500) {
+  if (window.pageYOffset > 0) {
     navbar.classList.add('scrolled');
   } else {
     navbar.classList.remove('scrolled');
@@ -81,6 +80,13 @@ function addMainitem(event){
         selectedItemName = Product.allProducts[rightImgIndex].name;
         selectedItemPrice = Product.allProducts[rightImgIndex].price;
     }
+    for (let index = 0; index < cart.items.length; index++) {
+      if(cart.items[index].product === selectedItemName) {
+        cart.items[index].quantity ++;
+        cart.saveToLocalStorage();
+        return;
+        
+      }}
     cart.addItem(selectedItemName,selectedItemPrice);
 }
 function loadCount(){
@@ -90,3 +96,18 @@ function loadCount(){
   }
   
   loadCount()
+
+  function showPopUp1(){
+    var popup_box = document.getElementById('my_pop_up_box1');
+    popup_box.style.display="block";
+    setTimeout(function() { popup_box.style.display="none";}, 3000);
+  }
+  
+  
+  function showPopUp2(){
+    var popup_box = document.getElementById('my_pop_up_box2');
+    popup_box.style.display="block";
+    setTimeout(function() { popup_box.style.display="none";}, 3000);
+  }
+  
+ 

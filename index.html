@@ -20,20 +20,9 @@
     <header id="headpage">
         <section>
             <article>
-                <div class="crossfade">
-                    <figure></figure>
-                    <figure></figure>
-                    <figure></figure>
-                    <figure></figure>
-                    <figure></figure>
-                </div>
-            </article>
-        </section>
-        <section>
-            <article>
-                <nav>
+                <nav id="navbar">
                     <div class="logo">
-                        <i class="fas fa-store"></i>
+                        <i class="fas fa-leaf"></i>
                         Orchid
                     </div>
                     <div class="menu">
@@ -41,24 +30,39 @@
                             <li><a href="index.html">Home</a></li>
                             <li><a href="products.html">Products</a></li>
                             <li><a href="aboutUs.html">About</a></li>
-                            <li><a href="cart.html">Cart &nbsp;</a><i class="fas fa-shopping-cart"></i></li>
+                            <li><a href="cart.html">Cart &nbsp;</a><i class="fas fa-shopping-cart">&nbsp;<span
+                                        id="itemCount"></span></i></li>
                         </ul>
-                    </div>
                 </nav>
             </article>
         </section>
+        <div id="headerText">
+            <h2>Orchid</h2>
+          </div>
     </header>
     <main>
         <section id="sect3">
-            <div class="circle"><h2>
-                <br>
-                ABOUT US
-            </h2></div>
-            <div id="videoDiv">
-                <video width="700" height="400" loop autoplay>
-                    <source src="https://assets.mixkit.co/videos/preview/mixkit-view-to-the-sideboard-of-a-flower-shop-4742-large.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                  </video>
+            <div class="parent_div">
+                <div class="circle">
+                    <h2>
+                        <br>
+                        ABOUT US
+                    </h2>
+                </div>
+                <br><br>
+                <p>We provide all kinds of fresh flower services.</p><br>
+                <p>We take flowers personally& we bring you happiness.</p><br>
+                <p>When you think of flowers think of ours.</p><br>
+                <p>To share a flowers is to share the happiness.</p><br>
+                <p>The perfect bunch for every occasion.</p><br>
+                <p>The Orchid business has a significant market in the social event world, as flowers.</p>
+                <div id="videoDiv">
+                    <video width="700" height="400" loop autoplay>
+                        <source
+                            src="https://assets.mixkit.co/videos/preview/mixkit-view-to-the-sideboard-of-a-flower-shop-4742-large.mp4"
+                            type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
             <br><br>
             <p>We provide all kinds of fresh flower services.</p><br>
@@ -70,89 +74,125 @@
          
         </section>
         <section id="sect1">
-            <video id="right" width="500" height="400" loop autoplay>
-                <source src="production.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-                <h2>
-                    What We Can Offer
-                </h2>
-                <div class="card-center1">
-                    <div class="card-wrap">
-                        <div class="card-img">
-                            <span class="hearth"><i class="fas fa-gift"></i></span>
-                        </div>
-                        <div class="card-box">
-                            <h4>Flowers</h4>
-                            <p>You can order flowers delivery all over the world from us.</p>
-                        </div>
-                    </div>
+            <div class="card-center">
+                <div class="card-wrap">
+                    <h2>
+                        What We Can Offer
+                    </h2>
                 </div>
-                <div class="card-center">
-                    <div class="card-wrap">
-                        <div class="card-img">
-                            <span class="hearth"><i class="fas fa-id-card"></i></span>
-                        </div>
-                        <div class="card-box">
-                            <h4>Postcards</h4>
-                            <p>We will attach a card with the text that you specified when placing the order.</p>
-                        </div>
+            </div>
+            <div class="card-center">
+                <div class="card-wrap">
+                    <div class="card-img">
+                        <span class="hearth"><i class="fas fa-gift"></i></span>
                     </div>
-                </div>
-                <div class="card-center2">
-                    <div class="card-wrap">
-                        <div class="card-img">
-                            <span class="hearth"><i class="far fa-star"></i></span>
-                        </div>
-                        <div class="card-box">
-                            <h4>Wrapping</h4>
-                            <p>Huge selection of roses, chrysanthemums, lilies, and other fresh flowers.</p>
-                        </div>
+                    <div class="card-box">
+                        <h4>Flowers</h4>
+                        <p>You can order flowers delivery all over the world from us.</p>
                     </div>
                 </div>
             </div>
-            
+            <div class="card-center">
+                <div class="card-wrap">
+                    <div class="card-img">
+                        <span class="hearth"><i class="fas fa-id-card"></i></span>
+                    </div>
+                    <div class="card-box">
+                        <h4>Postcards</h4>
+                        <p>We will attach a card with the text that you specified when placing the order.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-center">
+                <div class="card-wrap">
+                    <div class="card-img">
+                        <span class="hearth"><i class="far fa-star"></i></span>
+                    </div>
+                    <div class="card-box">
+                        <h4>Wrapping</h4>
+                        <p>Huge selection of roses, chrysanthemums, lilies, and other fresh flowers.</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+            <div class="img-wrap">
+
+                <div id="background" class="clip"></div>
+                <div id="clip" class="clip"><img src="https://i.pinimg.com/originals/1a/78/56/1a78568d1749fd857948e5e16678de2e.jpg" alt=""></div>
+                
+                
+                
+
+                <div class="flowerContainer">
+                    <div class="droplet" id="no1"></div>
+                    <div class="droplet" id="no2"></div>
+                    <div class="droplet" id="no3"></div>
+                    <div class="droplet" id="no4"></div>
+                    <div class="droplet" id="no5"></div>
+                    <div class="droplet" id="no6"></div>
+                    <div class="droplet" id="no7"></div>
+                    <div class="droplet" id="no8"></div>
+                    <div class="droplet" id="no9"></div>
+                    <div class="droplet" id="no10"></div>
+
+                </div>
+            </div>
         </section>
         <section id="sect2">
             <div class="container">
                 <h2>
-                    What We Can Offer
+                    Featured Products
                 </h2>
             </div>
             <div class="wrapper1">
                 <div class="product-img">
-                  <img src="img/rainbow.jpg" height="420" width="327">
+                    <img id="leftImg" height="420" width="327">
                 </div>
                 <div class="product-info">
-                  <div class="product-text">
-                    <h1>Rainbow</h1>
-                    <br>
-                    <p>CUSTOM FLOWER
-                        <br>Let our flowers make your party more perfect.<br>
-                        Price : 99$ </p>
-                  </div>
-                  <div class="product-price-btn">
-                    <button type="button">Order now</button>
-                  </div>
+                    <div class="product-text">
+                        <h1 id="imgName1"></h1>
+                        <br>
+                        <p>CUSTOM FLOWER
+                            <br>Let our flowers make your party more perfect.<br>
+                        </p>
+                        <p id="price1">
+                        <p>
+                    </div>
+                    <div class="product-price-btn">
+                        <button id="orderNum1" type="button" onclick="showPopUp1()">Order now</button>
+                        <div id="my_pop_up_box1">
+                            <img src="https://cdn.dribbble.com/users/146773/screenshots/4228811/dribble_cart.gif"
+                                width="235px" alt="">
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="wrapper2">
+            </div>
+            <div class="wrapper2">
                 <div class="product-img">
-                  <img src="img/Softly speaking.jpg" height="420" width="327">
+                    <img id="rightImg" height="420" width="327">
                 </div>
                 <div class="product-info">
-                  <div class="product-text">
-                    <h1>Lily</h1>
-                    <br>
-                    <p>CUSTOM FLOWER
-                        <br>Let our flowers make your party more perfect.<br>
-                        Price : 200$ </p>
-                  </div>
-                  <div class="product-price-btn">
-                    <button type="button">Order now</button>
-                  </div>
+                    <div class="product-text">
+                        <h1 id="imgName2"></h1>
+                        <br>
+                        <p>CUSTOM FLOWER
+                            <br>Let our flowers make your party more perfect.<br>
+                        </p>
+                        <p id="price2"></p>
+                    </div>
+                    <div class="product-price-btn">
+                        <button id="orderNum2" type="button" onclick="showPopUp2()">Order now</button>
+                        <div id="my_pop_up_box2">
+                            <img src="https://cdn.dribbble.com/users/146773/screenshots/4228811/dribble_cart.gif"
+                                width="235px" alt="">
+                        </div>
+                    </div>
                 </div>
-              </div>
+            </div>
+
+
+
         </section>
     </main>
     <footer>
@@ -162,7 +202,7 @@
         <i class="fab fa-whatsapp"></i>
 
         Copyright ©2021 All rights reserved
-        <a href="#headpage"><i class="fas fa-angle-double-up"> Scroll Up</i></a>
+        <a href="#headpage"><i class="fab fa-pagelines"> Up</i></a>
     </footer>
     <script src="js/app.js"></script>
 </body>
