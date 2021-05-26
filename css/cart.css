@@ -25,8 +25,11 @@ body {
   }
 
   #cart thead tr th {
-    
-    color :white;
+    font-family: "Pattaya", sans-serif;
+    color: #7520ff;
+  background: linear-gradient(45deg, #7520ff, #e96188);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
     border-top:3px solid #062f4f ;
     border-bottom: 3px solid #062f4f;
     /* border-right: 3px solid #062f4f;
@@ -34,20 +37,31 @@ body {
     font-weight: bold;
     padding: 1em 1em;
     padding-left: 50px;
-    
+    font-size: 3rem;
     
   }
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
   
   #cart tr td {
     border-bottom: 1px solid #062f4f;
     border-collapse: none;
-    color:white;
+    color: #000;
     padding: .5em 1em;
     text-align: center;
     width: auto;
     padding-left: 50px;
-
+    font-family: "Gamja Flower", cursive;
+    font-size: 1.2rem;
     
   }
   
@@ -278,4 +292,226 @@ span.price {
   margin-right:50px;
   width: 210px;
 
+}
+
+#cart-title{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 100vw;
+  height: 75vh;
+  color: #fcedd8;
+  background-color: var(--bg-color);
+  font-family: 'Maitree', serif;
+}
+#cart-title h1{
+  font-size: 10rem;
+  font-weight: normal;
+}
+
+/* title styles */
+.home-title span{
+  position: relative;
+  overflow: hidden;
+  display: block;
+  line-height: 1.2;
+}
+
+.home-title span::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  animation: a-ltr-after 2s cubic-bezier(.77,0,.18,1) forwards;
+  transform: translateX(-101%);
+}
+
+.home-title span::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-color);
+  animation: a-ltr-before 2s cubic-bezier(.77,0,.18,1) forwards;
+  transform: translateX(0);
+}
+
+.home-title span:nth-of-type(1)::before,
+.home-title span:nth-of-type(1)::after{
+  animation-delay: 1s;
+}
+
+.home-title span:nth-of-type(2)::before,
+.home-title span:nth-of-type(2)::after{
+  animation-delay: 1.5s;
+}
+
+@keyframes a-ltr-after{
+  0% {transform: translateX(-100%)}
+  100% {transform: translateX(101%)}
+}
+
+@keyframes a-ltr-before{
+  0% {transform: translateX(0)}
+  100% {transform: translateX(200%)}
+}
+
+
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 40%;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: rgba(9, 48, 16, 0.919);
+  color: white;
+}
+
+.modal-header h2 {
+  font-weight: bold;
+  text-align: center;
+  font-size: 30px;
+  font-family: cursive;
+}
+
+.modal-body {
+    padding: 2px 16px;
+    height: 270px;
+    text-align: center;
+    font-size: 20px;
+    padding-top: 21px;
+    font-family: cursive;
+    background-image:url(https://mafexpress.com/wp-content/uploads/2020/07/251ed9_5ccef94203bf4137b6b702801bfb7b18_mv2.gif);
+    background-repeat: no-repeat;
+    background-position-x: center;
+}
+
+.modal-footer {
+  padding: 2px 16px;
+  background-color: rgba(9, 48, 16, 0.919);
+  color: white;
+  font-size: 15px;
+  text-align: center;
+  font-family: cursive;
+}
+
+
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  width: 175px;
+  background-color: rgba(85, 85, 85, 0.748);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -40px;
+  font-size: 10px;
+  height: 25px;
+  top: -46px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  /* top: 100%; */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: rgba(85, 85, 85, 0.734) transparent transparent transparent;
+  top: 25px;
+  left: 80px;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
 }

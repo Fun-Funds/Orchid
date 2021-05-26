@@ -1,7 +1,19 @@
 'use strict';
+let navbar = document.querySelector('nav');
 
+window.onscroll = function() {
+
+  // pageYOffset or scrollY
+  if (window.pageYOffset > 500) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+}
 const table = document.getElementById('cart');
 table.addEventListener('click', removeItemFromCart);
+
+
 
 let cart;
 
@@ -45,11 +57,22 @@ let tBody = table.getElementsByTagName('tbody')[0];
   tableRow.appendChild(itemtd);
   itemtd.textContent=cart.items[i].product;
 
+  let btnEl1 = document.createElement("button");
+  tableRow.appendChild(btnEl1);
+  btnEl1.textContent = "-";
+  btnEl1.setAttribute("onclick",`saveEl('${itemtd.textContent}')`);
+  btnEl1.addEventListener('click',dec);
   //  Create a TD for the quantity 
-
-  let quantitytd= document.createElement('td');
+  let quantitytd= document.createElement('input');
+  quantitytd.setAttribute("type", "number");
   tableRow.appendChild(quantitytd);
-  quantitytd.textContent="";
+  quantitytd.value=cart.items[i].quantity;
+
+  let btnEl2 = document.createElement("button");
+  tableRow.appendChild(btnEl2);
+  btnEl2.textContent = "+";
+  btnEl2.setAttribute("onclick",`saveEl('${itemtd.textContent}')`);
+  btnEl2.addEventListener("click",inc);
 
   // Create a TD for the price
   let pricetd= document.createElement('td');
@@ -66,7 +89,45 @@ let tBody = table.getElementsByTagName('tbody')[0];
   button.textContent='X';
   button.setAttribute('id',cart.items[i].product);
   button.addEventListener('click',removeItemFromCart);
+  // if (data !== undefined) {
+
+  //   countEl.textContent = cart.items[i].quantity;
+
+  // }
+
   }
+}
+let x;
+function saveEl(a){
+  x = a;
+ return(x);
+ }
+
+function inc(){
+  let selectedItemName = x;
+  for (let index = 0; index < cart.items.length; index++) {
+    
+    if(cart.items[index].product === selectedItemName) {
+      cart.items[index].quantity ++;
+      cart.saveToLocalStorage();
+      updateCounter()
+      return;
+      
+    }
+}
+}
+function dec(){
+  let selectedItemName = x;
+  for (let index = 0; index < cart.items.length; index++) {
+    if(cart.items[index].product === selectedItemName) {
+      cart.items[index].quantity --;
+      cart.saveToLocalStorage();
+      updateCounter()
+      return;
+      
+      
+    }
+}
 }
 
 function removeItemFromCart(event) {
@@ -76,15 +137,47 @@ let removeItem= event.target.id;
 for (let i=0; i<cart.items.length;i++){
   if (cart.items[i].product===removeItem){
   cart.removeItem (cart.items[i]);
+  delete arr[i];
   let data = JSON.stringify(`${cart.items.length}`);
   localStorage.setItem('count', data);
+  
 }}
   //  Save the cart back to local storage
   cart.saveToLocalStorage();
   // Re-draw the cart table
+  
   renderCart();
  }
 
 // This will initialize the page and draw the cart on screen
 renderCart();
 
+
+
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+  location.reload();
+  localStorage.clear();
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}

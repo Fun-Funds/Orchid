@@ -1,6 +1,5 @@
 *
 {
-	background: #272626;
 	margin: 0;
 	padding: 0;
 }
@@ -258,3 +257,57 @@ animation: gradient 15s ease infinite; */
 }
 
 
+.perspective-text {
+	color: #fcedd8;
+	font-family: Arial;
+	font-size: 58px;
+	font-weight: 900;
+	letter-spacing: -2px;
+	text-transform: uppercase;
+  }
+  
+  .perspective-line {
+	height: 50px;
+	overflow: hidden;
+	position: relative;
+  }
+  
+  p {
+	margin: 0;
+	height: 50px;
+	line-height: 50px;
+	transition: all 0.5s ease-in-out;
+  }
+  
+  .perspective-line:nth-child(odd) {
+	transform: skew(60deg, -20deg) scaleY(0.667);
+  }
+  
+  .perspective-line:nth-child(even) {
+	transform: skew(0deg, -20deg) scaleY(1.337);
+  }
+  
+  .perspective-text:hover p {
+	transform: translate(0, -50px);
+  }
+  
+  .perspective-line:nth-child(1) {
+	left: 29px;
+  }
+  
+  .perspective-line:nth-child(2) {
+	left: 58px;
+	background: #df144d;
+  }
+  
+  .perspective-line:nth-child(3) {
+	left: 87px;
+	background: #7520ff;
+  }
+  
+
+  
+  .perspective-line:nth-child(5) {
+	left: 145px;
+  }
+  
