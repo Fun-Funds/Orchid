@@ -4,6 +4,7 @@
 	margin: 0;
 	padding: 0;
 }
+
 /* main{
   background: linear-gradient(45deg, #3f0799, #df144d);
 } */
@@ -20,8 +21,19 @@ margin-bottom: 20px;
 margin-top: 20px;
 display: inline;
 } */
+
+@keyframes gradient {
+	0% {
+	  background-position: 0% 50%;
+	}
+	50% {
+	  background-position: 100% 50%;
+	}
+	100% {
+	  background-position: 0% 50%;
+	}}
 .img-wrapper
-{
+{ /* border-radius: 11%; */
 	width: 300px;
 	height: 400px;
 	position: relative;
@@ -60,11 +72,11 @@ display: inline;
 	transition: 0.7s;
 
  
-  border-radius: 5%;
+  border-radius: 9%;
   border-width: 30px;
-  border-color:  #3f0799 #df144d;
-  border-style:double;
- 
+  border-color:   #6c24df ;
+  border-style:double; 
+
   
 }
 .img-wrapper:hover img
@@ -77,9 +89,12 @@ display: inline;
 {
 	/* background: tomato; */
 	/* background: #7520ff; */
-    background: linear-gradient(45deg, #3f0799, #df144d);
-	font-family: Poppins;
-	color: #fff;
+    background: linear-gradient(45deg,  #6c24df, #f14979);
+	/* font-family: cursive; */
+	
+font-family:initial;
+font-style: italic;
+	color: rgb(255, 255, 255);
 	text-align: center;
 	text-transform: uppercase;
 	margin: 0;
@@ -92,7 +107,8 @@ display: inline;
 	transition: 1s;
 }
 .img-wrapper h2 small{
-    background: linear-gradient(45deg, #3f0799, #df144d);
+    background: linear-gradient(45deg,  #6c24df, #f14979);
+	
 }
 
 .img-wrapper:hover h2
@@ -105,8 +121,9 @@ display: inline;
 {
 	/* background: tomato; */
 	/* background: #7520ff; */
-    background: linear-gradient(45deg, #3f0799, #df144d);
-	font-family: Poppins;
+    background: linear-gradient(45deg, #6c24df, #f14979);
+	font-family:initial;
+	font-style: italic;
 	color: #fff;
 	text-align: center;
 	text-transform: uppercase;
@@ -195,19 +212,49 @@ display: inline;
 {
 	/* color: #fff; */
     color:  #df144d;
-	background: rgba(255,255,255,0);
+	background: rgba(255, 255, 255, 0);
 }
 
 .imgContainer{
   display: flex;
   flex-wrap: wrap;
-  /* background: linear-gradient(45deg, #3f0799, #df144d); */
+  /* background: linear-gradient(-45deg,  #9865eb,  #f1618a, #9865eb,  #df144d);
+  background-size: 1000% 1000%;
+  animation: gradient 5s ease infinite; */
+
+
+  /* background-image: url("https://www.teahub.io/photos/full/210-2108550_blue-orchid-good-morning.jpg");
+
+
+
+  animation-delay: 6s;
+  background-image: url("https://images.unsplash.com/photo-1567696153798-9111f9cd3d0d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80");
+
+
+  animation-delay: 12s;
+  background-image: url("https://images.unsplash.com/photo-1494337095615-b5f370aad75f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80");
+
+
+
+  animation-delay: 18s;
+  background-image: url("https://images.unsplash.com/photo-1519218470957-62c7c83c36b4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1055&q=80");
+
+
+
+  animation-delay: 24s;
+  background-image: url("https://images.unsplash.com/reserve/c5cjBc9sRJKPYSmtzfBJ_DSC_7452.jpg?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=967&q=80"); */
+
 }
 
 .imgContainer > div{
 margin: 10px 10px 10px 50px;
 padding: 10px;
-/* background: linear-gradient(45deg, #24025c, #a80432); */
+ /* -webkit-background-clip: text;  */
+/* background: linear-gradient(-45deg,#7520ff,   #f1618a, #7520ff,  #df144d);
+background-size: 1000% 1000%;
+animation: gradient 15s ease infinite; */
+
+
 }
 
 
