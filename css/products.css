@@ -1,7 +1,12 @@
 * {
   box-sizing: border-box;
 }
-
+h2{
+  font-family: "Pattaya", sans-serif;
+}
+p{
+  font-family: "Gamja Flower", cursive;
+}
 #img-container {
   margin-bottom: 100px;
   padding: 35px 35px;
@@ -145,14 +150,15 @@ html {
   min-height: 100%;
 }
 
-.box {
-  width: 800px;
-  margin: 10% auto;
-  position: relative;
+
+#renderContainer{
+width: 100%;
+height: 100%;
 }
 
 #box {
-  margin: 25px ;
+  width: 100%;
+  height: 100%;
 }
 
 #card-container {
@@ -260,7 +266,6 @@ img {
 }
 h1, p {
   font-family: "Questrial", sans-serif;
-  text-transform: uppercase;
   letter-spacing: 2px;
 }
 
