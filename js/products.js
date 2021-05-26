@@ -68,9 +68,11 @@ function populateForm() {
 
 
         let buttonE2 = document.createElement('button');
-        // buttonE2.textContent="buy111"
+        // buttonE2.textContent="buy111";
+        buttonE2.id=`bun${i}`;
+
         buttonE2.setAttribute('class', 'button-bird');
-        buttonE2.addEventListener('click', handleSubmit);
+
 
 
         divE2.appendChild(buttonE2);
@@ -78,8 +80,11 @@ function populateForm() {
 
         let pE1 = document.createElement('p');
         buttonE2.appendChild(pE1);
+        pE1.id=`but${i}`;
         pE1.setAttribute('class', 'button-bird__text');
         pE1.textContent = ('ADD TO CART');
+        buttonE2.setAttribute("onclick", `saveEl('${headerEl.textContent}','${paraEl.textContent}','${buttonE2.id}','${pE1.id}')`);
+        buttonE2.addEventListener('click', handleSubmit);
 
 
         // creating the bird button 
@@ -103,21 +108,21 @@ function populateForm() {
 
 
             // flying bird after click
-            document.addEventListener("click", function () {
-                var el = document.querySelector(".button-bird");
-                var text = document.querySelector(".button-bird__text");
-                el.addEventListener('click', function () {
-                    el.classList.toggle('active');
-                    console.log(el);
+            // document.addEventListener("click", function () {
+            //     var el = document.querySelector(".button-bird");
+            //     var text = document.querySelector(".button-bird__text");
+            //     el.addEventListener('click', function () {
+            //         el.classList.toggle('active');
+            //         console.log(el);
 
-                    if (el.classList.contains('active')) {
-                        console.log('true');
-                        text.innerHTML = 'DONE';
-                    } else {
-                        text.innerHTML = 'Added to cart';
-                    }
-                });
-            });
+            //         if (el.classList.contains('active')) {
+            //             console.log('true');
+            //             text.innerHTML = 'DONE';
+            //         } else {
+            //             text.innerHTML = 'Added to cart';
+            //         }
+            //     });
+            // });
 
 
         }
@@ -154,27 +159,28 @@ function populateForm() {
         buttonDiv.appendChild(buttonE2);
         button.addEventListener('click', handleSubmit);
 
-        // let buttonE2 = button.cloneNode(true);
+
+        // buttonE2 = button.cloneNode(true);
 
 
 
 
     }
     // flying bird after click
-    document.addEventListener("DOMContentLoaded", function () {
-        var el = document.querySelector(".button-bird");
-        var text = document.querySelector(".button-bird__text");
-        el.addEventListener('click', function () {
-            el.classList.toggle('active');
+    // document.addEventListener("DOMContentLoaded", function () {
+    //     var el = document.querySelector(".button-bird");
+    //     var text = document.querySelector(".button-bird__text");
+    //     el.addEventListener('click', function () {
+    //         el.classList.toggle('active');
 
-            if (el.classList.contains('active')) {
-                console.log('true');
-                text.innerHTML = 'DONE';
-            } else {
-                text.innerHTML = 'SEND';
-            }
-        });
-    });
+    //         if (el.classList.contains('active')) {
+    //             console.log('true');
+    //             text.innerHTML = 'DONE';
+    //         } else {
+    //             text.innerHTML = 'SEND';
+    //         }
+    //     });
+    // });
 }
 
 populateForm()
@@ -182,9 +188,21 @@ populateForm()
 let x;
 let y;
 
-function saveEl(a, b) {
+function saveEl(a, b,c,d) {
+
     x = a;
     y = b;
+    let el1 =document.getElementById(c);
+    let text2 =document.getElementById(d);
+    console.log(text2);
+    el1.classList.toggle('active');
+
+    if (el1.classList.contains('active')) {
+        console.log('true');
+        text2.innerHTML = 'DONE';
+    } else {
+        text2.innerHTML = 'SEND';
+    }
     return (x, y);
 }
 
