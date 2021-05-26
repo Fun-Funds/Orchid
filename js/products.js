@@ -1,6 +1,16 @@
 'use strict';
 
 
+
+window.onscroll = function() {
+
+  // pageYOffset or scrollY
+  if (window.pageYOffset > 0) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+}
 const cart = new Cart([]);
 
 function populateForm() {
@@ -148,6 +158,7 @@ function populateForm() {
 
 
 
+
     }
     // flying bird after click
     document.addEventListener("DOMContentLoaded", function () {
@@ -188,13 +199,23 @@ function handleSubmit(event) {
 
 
 function addSelectedItemToCart() {
-
-    let selectedItemName = x;
-    let selectedItemPrice = y;
-    cart.addItem(selectedItemName, selectedItemPrice);
-    console.log(cart);
+  let selectedItemName = x;
+  let selectedItemPrice = y;
+for (let index = 0; index < cart.items.length; index++) {
+  if(cart.items[index].product === selectedItemName) {
+    cart.items[index].quantity ++;
+    cart.saveToLocalStorage();
+    return;
+    
+  }
+  
 }
+    
+    cart.addItem(selectedItemName,selectedItemPrice);
+    console.log(cart);
+    
 
+}
 
 function loadCount() {
     const countItems = JSON.parse(localStorage.getItem('count')) || [];
@@ -217,4 +238,4 @@ function loadCount() {
 
 
 
-loadCount()
+  loadCount();

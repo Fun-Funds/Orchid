@@ -2,8 +2,11 @@ body {
     color: #000;
     overflow-x: hidden;
     height: 100%;
-    background-color: #fff;
-    background-repeat: no-repeat
+  color:  #7520ff;
+  background: none;
+  background-color: black;
+  color: white;
+  font-size: larger;
 }
 
 
@@ -15,56 +18,99 @@ body {
   #cart {
     border-collapse: collapse;
     margin: auto;
-    width: 65%;
-  }
+    width: 90%;
+    
   
+    
+  }
+
   #cart thead tr th {
-    color: #777;
+    font-family: "Pattaya", sans-serif;
+    color: #7520ff;
+  background: linear-gradient(45deg, #7520ff, #e96188);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+    border-top:3px solid #062f4f ;
     border-bottom: 3px solid #062f4f;
+    /* border-right: 3px solid #062f4f;
+    border-left: 3px solid #062f4f; */
     font-weight: bold;
-    padding: .5em 1em;
+    padding: 1em 1em;
+    padding-left: 50px;
+    font-size: 3rem;
+    
   }
-  
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
   
   #cart tr td {
     border-bottom: 1px solid #062f4f;
     border-collapse: none;
-    color: #777;
+    color: #000;
     padding: .5em 1em;
     text-align: center;
     width: auto;
+    padding-left: 50px;
+    font-family: "Gamja Flower", cursive;
+    font-size: 1.2rem;
+    
   }
   
-  #cart tr td:last-child,
-  #cart tr th:last-child {
+  #cart tr td:first-child,
+  #cart tr th:first-child {
     text-align: left;
     width: 100%;
+  
   }
   
-  #cart tr td:first-child {
+  #cart tr td:last-child {
+    
     color: red;
     cursor: pointer;
+    padding-left: 50px;
   }
 .card {
+  
     margin: 40px 0px;
     padding: 40px 50px;
     border-radius: 20px;
     border: none;
     box-shadow: 1px 5px 10px 1px rgba(0, 0, 0, 0.2)
+    
+
 }
 
-input,
-textarea {
-    background-color: #F3E5F5;
-    padding: 8px 15px 8px 15px;
-    width: 100%;
-    border-radius: 5px !important;
-    box-sizing: border-box;
-    border: 1px solid #F3E5F5;
-    font-size: 15px !important;
-    color: #000 !important;
-    font-weight: 300
+
+#fname{
+  width: 400px;
+  height: 40px;
+  margin-left:-5px;
 }
+#email{
+  width: 400px;
+  height: 40px;
+  margin-left:-5px;
+}
+#adr{
+  width: 400px;
+  height: 40px;
+  margin-left:-5px;
+}
+#city{
+  width: 400px;
+  height: 40px;
+  margin-left:-5px;
+}
+
 
 input:focus,
 textarea:focus {
@@ -77,20 +123,241 @@ textarea:focus {
 }
 
 button:focus {
+  text-align: center;
     -moz-box-shadow: none !important;
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
     outline-width: 0
+    
 }
 
 .pay {
     width: 80px;
-    height: 40px;
+    height: 60px;
     border-radius: 5px;
     border: 1px solid #673AB7;
     margin: 10px 20px 10px 0px;
     cursor: pointer;
     box-shadow: 1px 5px 10px 1px rgba(0, 0, 0, 0.2)
 }
+h3{
+  font-size: 40px;
+}
+
+#quantity{
+  width: 70px;
+  height: 29px;
+  margin-top: 1.1mm;
+  margin-left:-70px ;
+  position:absolute; top:865px
+}
+
+.Payform{
+  background:linear-gradient(45deg, #7520ff, #e96188);
+  width:30%;
+  height: 80%;
+  margin-left: 500px ;
+}
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  margin: 0 -16px;
+  width: 600px;
+  
+
+}
 
 
+.col-25 {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+}
+
+.col-50 {
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+  text-align: center;
+}
+
+.col-75 {
+  -ms-flex: 75%; /* IE10 */
+  flex: 75%;
+  width:600px;
+  margin-left:500px;
+}
+.col-25,
+.col-50,
+.col-75 {
+  padding: 0 16px;
+}
+
+.container {
+  background: linear-gradient(45deg, #7520ff, #e96188);
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+}
+
+input[type=text] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.icon-container {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
+}
+
+.btn {
+  background-color:rgb(88, 85, 85);
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 300px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+  margin-left:110px;
+  
+
+}
+
+.btn:hover {
+  background-color: black;
+  
+}
+
+span.price {
+  float: right;
+  color: grey;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (and change the direction - make the "cart" column go on top) */
+@media (max-width: 600px) {
+  .row {
+    flex-direction: column-reverse;
+  }
+  .col-25 {
+    margin-bottom: 20px;
+  }
+}
+
+#cname{
+  width: 400px;
+  height: 40px;
+  margin: left -5px;
+  
+
+}
+#ccnum{
+  width: 400px;
+  height: 40px;
+  margin-left:-5px;
+}
+#expmonth{
+  width: 400px;
+  height: 40px;
+  margin-left:-5px;
+}
+#expyear{
+  margin-left:-5px;
+  margin-right:30px;
+  width: 200px;
+}
+#cvv{
+  width:200px;
+  margin-right: 30px;
+  margin-left: -5px;
+}
+#state{
+  margin-left:-5px;
+  margin-right:30px;
+  width: 210px;
+}
+#zip{
+  margin-left:-5px;
+  margin-right:50px;
+  width: 210px;
+
+}
+
+#cart-title{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 100vw;
+  height: 75vh;
+  color: #fcedd8;
+  background-color: var(--bg-color);
+  font-family: 'Maitree', serif;
+}
+#cart-title h1{
+  font-size: 10rem;
+  font-weight: normal;
+}
+
+/* title styles */
+.home-title span{
+  position: relative;
+  overflow: hidden;
+  display: block;
+  line-height: 1.2;
+}
+
+.home-title span::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  animation: a-ltr-after 2s cubic-bezier(.77,0,.18,1) forwards;
+  transform: translateX(-101%);
+}
+
+.home-title span::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-color);
+  animation: a-ltr-before 2s cubic-bezier(.77,0,.18,1) forwards;
+  transform: translateX(0);
+}
+
+.home-title span:nth-of-type(1)::before,
+.home-title span:nth-of-type(1)::after{
+  animation-delay: 1s;
+}
+
+.home-title span:nth-of-type(2)::before,
+.home-title span:nth-of-type(2)::after{
+  animation-delay: 1.5s;
+}
+
+@keyframes a-ltr-after{
+  0% {transform: translateX(-100%)}
+  100% {transform: translateX(101%)}
+}
+
+@keyframes a-ltr-before{
+  0% {transform: translateX(0)}
+  100% {transform: translateX(200%)}
+}

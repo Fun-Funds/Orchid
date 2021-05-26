@@ -1,14 +1,24 @@
 'use strict';
 
+
+window.onscroll = function() {
+
+  // pageYOffset or scrollY
+  if (window.pageYOffset > 0) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+}
 // Cart constructor.
 const Cart = function (items) {
     
     this.items = items;
 };
 
-Cart.prototype.addItem = function (product,price) {
+Cart.prototype.addItem = function (product,price,quantity) {
     
-    this.items.push(new CartItem(product,price));
+    this.items.push(new CartItem(product,price,quantity));
 };
 
 Cart.prototype.saveToLocalStorage = function () {
@@ -30,6 +40,7 @@ Cart.prototype.removeItem = function (item) {
 const CartItem = function (product,price) {
     this.product = product;
     this.price = price;
+    this.quantity = 1;
 };
 
 // Product contructor.
@@ -59,12 +70,28 @@ function generateCatalog() {
 
 generateCatalog();
 
+let arr = [];
+
 function updateCounter() {
     
     let countEl = document.getElementById('itemCount');
-    countEl.textContent = `${cart.items.length}`;
-    console.log(countEl);
+    for (let index = 0; index < cart.items.length; index++) {
+        arr[index] = cart.items[index].quantity;
+    }
+    if(!Array.isArray(arr)) return;
+    let totalNumber = 0;
+        for (let i=0,l=arr.length; i<l; i++) {
+           totalNumber+=arr[i];
+           console.log(totalNumber);
+    }
 
-    let data = JSON.stringify(`${cart.items.length}`);
+    console.log(arr);
+        countEl.textContent = totalNumber;
+    console.log(countEl);
+    
+    let data = JSON.stringify(`${totalNumber}`);
     localStorage.setItem('count', data);
-}
+        
+    }
+
+      
