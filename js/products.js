@@ -59,6 +59,7 @@ function populateForm() {
         button.addEventListener('click', handleSubmit);
 
 
+
     }
 }
 
@@ -84,13 +85,23 @@ function handleSubmit(event) {
 
 
 function addSelectedItemToCart() {
+  let selectedItemName = x;
+  let selectedItemPrice = y;
+for (let index = 0; index < cart.items.length; index++) {
+  if(cart.items[index].product === selectedItemName) {
+    cart.items[index].quantity ++;
+    cart.saveToLocalStorage();
+    return;
     
-     let selectedItemName = x;
-     let selectedItemPrice = y;
+  }
+  
+}
+    
     cart.addItem(selectedItemName,selectedItemPrice);
     console.log(cart);
-}
+    
 
+}
 
 function loadCount(){
     const countItems = JSON.parse(localStorage.getItem('count')) || [];
@@ -99,5 +110,3 @@ function loadCount(){
   }
 
   loadCount();
-
-  

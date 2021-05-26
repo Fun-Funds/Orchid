@@ -1,7 +1,6 @@
 'use strict';
 
 
-
 window.onscroll = function() {
 
   // pageYOffset or scrollY
@@ -81,6 +80,13 @@ function addMainitem(event){
         selectedItemName = Product.allProducts[rightImgIndex].name;
         selectedItemPrice = Product.allProducts[rightImgIndex].price;
     }
+    for (let index = 0; index < cart.items.length; index++) {
+      if(cart.items[index].product === selectedItemName) {
+        cart.items[index].quantity ++;
+        cart.saveToLocalStorage();
+        return;
+        
+      }}
     cart.addItem(selectedItemName,selectedItemPrice);
 }
 function loadCount(){
