@@ -107,22 +107,7 @@ function populateForm() {
       span.setAttribute('class', `bird--${i2}`);
 
 
-      // flying bird after click
-      // document.addEventListener("click", function () {
-      //     var el = document.querySelector(".button-bird");
-      //     var text = document.querySelector(".button-bird__text");
-      //     el.addEventListener('click', function () {
-      //         el.classList.toggle('active');
-      //         console.log(el);
-
-      //         if (el.classList.contains('active')) {
-      //             console.log('true');
-      //             text.innerHTML = 'DONE';
-      //         } else {
-      //             text.innerHTML = 'Added to cart';
-      //         }
-      //     });
-      // });
+ 
 
 
     }
@@ -151,36 +136,20 @@ function populateForm() {
 
 
     button.setAttribute("class", "addToCart");
-    // button.setAttribute("class", "button-bird");
+    
     button.setAttribute("onclick", `saveEl('${headerEl.textContent}','${priceE1}')`);
-    // button.innerHTML = "BUY";
-    // button.type = "buy";
-    // button.name = "cartButton";
+   
     buttonDiv.appendChild(buttonE2);
     button.addEventListener('click', handleSubmit);
 
 
-    // buttonE2 = button.cloneNode(true);
+   
 
 
 
 
   }
-  // flying bird after click
-  // document.addEventListener("DOMContentLoaded", function () {
-  //     var el = document.querySelector(".button-bird");
-  //     var text = document.querySelector(".button-bird__text");
-  //     el.addEventListener('click', function () {
-  //         el.classList.toggle('active');
 
-  //         if (el.classList.contains('active')) {
-  //             console.log('true');
-  //             text.innerHTML = 'DONE';
-  //         } else {
-  //             text.innerHTML = 'SEND';
-  //         }
-  //     });
-  // });
 }
 
 populateForm()
@@ -201,7 +170,7 @@ function saveEl(a, b, c, d) {
     console.log('true');
     text2.innerHTML = 'DONE';
   } else {
-    text2.innerHTML = 'SEND';
+    text2.innerHTML = 'ADD TO CART';
   }
   return (x, y);
 }
@@ -240,19 +209,6 @@ function loadCount() {
   let countEl = document.getElementById('itemCount');
   countEl.textContent = `${countItems}`;
 }
-
-
-///////////////////////////////////////////
-
-
-
-
-
-
-
-
-
-
 
 
 
