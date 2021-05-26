@@ -49,18 +49,132 @@ function populateForm() {
 
         paraEl.textContent = `${Product.allProducts[i].price}`;
 
+        let textE1 = document.createElement("h2");
+        divE2.appendChild(textE1);
+        textE1.textContent = `${Product.allProducts[i].name}`;
+
+        let textE2 = document.createElement("h3");
+        divE2.appendChild(textE2);
+        textE2.textContent = `${Product.allProducts[i].price}`;
+        let buttonDiv = document.createElement('div');
+        divE2.appendChild(buttonDiv);
+        buttonDiv.setAttribute('class', 'wrapper-no4')
+
+
+
         let button = document.createElement('button');
-        button.setAttribute("class", "addToCart");
-        button.setAttribute("onclick",`saveEl('${headerEl.textContent}','${paraEl.textContent}')`);
-        button.innerHTML = "BUY";
-        button.type = "buy";
-        button.name = "cartButton";
         divE5.appendChild(button);
+        button.textContent='BUY';
+
+
+        let buttonE2 = document.createElement('button');
+        // buttonE2.textContent="buy111"
+        buttonE2.setAttribute('class', 'button-bird');
+        buttonE2.addEventListener('click', handleSubmit);
+
+
+        divE2.appendChild(buttonE2);
+
+
+        let pE1 = document.createElement('p');
+        buttonE2.appendChild(pE1);
+        pE1.setAttribute('class', 'button-bird__text');
+        pE1.textContent = ('ADD TO CART');
+
+
+        // creating the bird button 
+        let svg = document.createElement('svg');
+        buttonE2.appendChild(svg);
+
+        let g = document.createElement('g');
+        svg.appendChild(g);
+
+        let path = document.createElement('path');
+        g.appendChild(path);
+
+        // need to attrubit;
+        let span = document.createElement('span');
+        buttonE2.appendChild(span);
+        span.setAttribute('class', `bird`)
+        for (let i2 = 1; i2 < 31; i2++) {
+            let span = document.createElement('span');
+            buttonE2.appendChild(span);
+            span.setAttribute('class', `bird--${i2}`);
+
+
+            // flying bird after click
+            document.addEventListener("click", function () {
+                var el = document.querySelector(".button-bird");
+                var text = document.querySelector(".button-bird__text");
+                el.addEventListener('click', function () {
+                    el.classList.toggle('active');
+                    console.log(el);
+
+                    if (el.classList.contains('active')) {
+                        console.log('true');
+                        text.innerHTML = 'DONE';
+                    } else {
+                        text.innerHTML = 'Added to cart';
+                    }
+                });
+            });
+
+
+        }
+
+
+
+        function setAttributes(el, attrs) {
+            for (var key in attrs) {
+                el.setAttribute(key, attrs[key]);
+            }
+        }
+
+        // to set more than one attribute
+
+        setAttributes(svg, { "version": "1.1", "class": "feather", "xmlns": "http://www.w3.org/2000/svg", "xmlns:xlink": "http://www.w3.org/1999/xlink", "x": "0px", "y": "0px", "viewBox": "0 0 75 38", "style": "enable-background:new 0 0 75 38;", "xml:space": "preserve" });
+        setAttributes(path, {
+            "d": `"M20.8,31.6c3.1-0.7,2.9-2.3,2,1c9.1,4.4,20.4,3.7,29.1-0.8l0,0c0.7-2.1,1-3.9,1-3.9c0.6,0.8,0.8,1.7,1,2.9
+        c4.1-2.3,7.6-5.3,10.2-8.3c0.4-2.2,0.4-4,0.4-4.1c0.6,0.4,0.9,1.2,1.2,2.1c4.5-6.1,5.4-11.2,3.7-13.5c1.1-2.6,1.6-5.4,1.2-7.7
+        c-0.5,2.4-1.2,4.7-2.1,7.1c-5.8,11.5-16.9,21.9-30.3,25.3c13-4,23.6-14.4,29.1-25.6C62.8,9,55.6,16.5,44.7,20.7
+        c2.1,0.7,3.5,1.1,3.5,1.6c-0.1,0.4-1.3,0.6-3.2,0.4c-7-0.9-7.1,1.2-16,1.5c1,1.3,2,2.5,3.1,3.6c-1.9-0.9-3.8-2.2-5.6-3.6
+        c-0.9,0.1-10.3,4.9-22.6-12.3C5.9,17.7,11.8,26.9,20.8,31.6z" `})
+
+
+
+
+
+
+        button.setAttribute("class", "addToCart");
+        // button.setAttribute("class", "button-bird");
+        button.setAttribute("onclick", `saveEl('${headerEl.textContent}','${paraEl.textContent}')`);
+        // button.innerHTML = "BUY";
+        // button.type = "buy";
+        // button.name = "cartButton";
+        buttonDiv.appendChild(buttonE2);
         button.addEventListener('click', handleSubmit);
+
+        // let buttonE2 = button.cloneNode(true);
+
 
 
 
     }
+    // flying bird after click
+    document.addEventListener("DOMContentLoaded", function () {
+        var el = document.querySelector(".button-bird");
+        var text = document.querySelector(".button-bird__text");
+        el.addEventListener('click', function () {
+            el.classList.toggle('active');
+
+            if (el.classList.contains('active')) {
+                console.log('true');
+                text.innerHTML = 'DONE';
+            } else {
+                text.innerHTML = 'SEND';
+            }
+        });
+    });
 }
 
 populateForm()
@@ -68,10 +182,10 @@ populateForm()
 let x;
 let y;
 
-function saveEl(a,b){
- x = a;
- y = b;
-return(x,y);
+function saveEl(a, b) {
+    x = a;
+    y = b;
+    return (x, y);
 }
 
 
@@ -103,10 +217,25 @@ for (let index = 0; index < cart.items.length; index++) {
 
 }
 
-function loadCount(){
+function loadCount() {
     const countItems = JSON.parse(localStorage.getItem('count')) || [];
     let countEl = document.getElementById('itemCount');
     countEl.textContent = `${countItems}`;
-  }
+}
+
+
+///////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
 
   loadCount();
