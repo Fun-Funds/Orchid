@@ -55,7 +55,7 @@ function populateForm() {
 
     let textE2 = document.createElement("h3");
     divE2.appendChild(textE2);
-    textE2.textContent = `${Product.allProducts[i].price}`;
+    textE2.textContent = `${Product.allProducts[i].price} $`;
     let buttonDiv = document.createElement('div');
     divE2.appendChild(buttonDiv);
     buttonDiv.setAttribute('class', 'wrapper-no4')
